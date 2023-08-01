@@ -1,0 +1,4 @@
+/.idea
+django_models/__pycache__
+web_app/__pycache__
+web_app/migrations/__pycache__

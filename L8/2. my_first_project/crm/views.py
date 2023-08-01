@@ -8,6 +8,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, PostStatus, Tag, Post
 from .forms import PostForm
 
+
 # View to create a new post
 def create_post(request):
     if request.method == 'POST':
@@ -48,6 +49,5 @@ def all_posts(request):
     posts = Post.objects.all()
     return render(request, 'all_posts.html', {'posts': posts})
 
-
 def index(request):
-    return HttpResponse("<html><body><h1>Hello World</h1></body></html>")
+    return HttpResponse("<html><body><h1>Hello World!</h1></body></html>")
