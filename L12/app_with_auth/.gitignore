@@ -1,4 +1,7 @@
-/.idea
+.idea
 crm/__pycache__
-app_with_auth/__pycache__
+crm/services/__pycache__
 crm/migrations/__pycache__
+crm/management/commands/__pycache__
+app_with_auth/__pycache__
+db.sqlite3
