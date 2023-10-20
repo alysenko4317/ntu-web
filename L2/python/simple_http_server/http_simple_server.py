@@ -8,7 +8,9 @@ PORT = 8001   # http://localhost:8001/hello
 # define the request handler class
 class SimpleHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/hello":
+        print(f"self.path={self.path}")
+        #if self.path == "/hello":
+        if self.path.startswith("/hello"):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()

@@ -12,7 +12,7 @@ def hello():
     # accessing headers
     #    get the value of the 'User-Agent' header
     user_agent = request.headers.get('User-Agent')
-    return f"Hello, {name}!\nUser-Agent: {user_agent}"
+    return f"Hello, {name}!<br>User-Agent: {user_agent}"
 
 
 # define a route and the associated view function
@@ -25,7 +25,7 @@ def hello2():
     user_agent = request.headers.get('User-Agent')  # Get the value of the 'User-Agent' header
     x_token = request.headers.get('X-token')  # Get the value of the 'X-token' header
 
-    return f"Hello, {name}!\nUser-Agent: {user_agent}\nX-token: {x_token}\n"
+    return f"<font color='red'><p>Hello, {name}!<p>User-Agent: {user_agent}<p>X-token: {x_token}</font>"
 
 
 # run the app if this script is executed directly
