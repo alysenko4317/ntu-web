@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрація інтерпольованого рядка</title>
+</head>
+<body>
+    <h1>Результат</h1>
+    <p id="demo"></p>
+
+    <script>
+        let name = "Олег";
+        let age = 30;
+
+        let a = 2;
+		let b = 3;
+		let c = 4;
+
+        let повідомлення = `Привіт! Мене звати ${name} і мені ${age} років.  ${Math.pow(a+c,b)}`;
+
+        document.getElementById('demo').textContent = повідомлення;
+		
+		// ------------------------------------
+		// named function declaration
+		// ------------------------------------
+		
+		console.log(sum(1,2,3,4))
+		console.log(sum(1,2,3,4,5,6))
+		console.log(sum(1,2))
+		
+		console.log(sum("a","2","b",""))
+		console.log(sum("1","2","3",4))
+		console.log(sum(1,2,3,"4"))
+		console.log(     1+2+3+"4")
+		console.log(sum("1","2","3","4"))
+		
+		let r2 = sum(2, '4', true, [1, 2, 'a', [1, [2]]]);
+        console.log(r2);
+
+		function sum(a,b,c,d=0) {
+		    return a+b+c+d;
+		}
+
+        // ------------------------------------
+		// function declaration via expression
+		// ------------------------------------
+		
+        let summa = function(a,b,c,d=0) {
+		    return a+b+c+d;
+		}
+		
+        console.log("summa=" + summa("1","2","3","4"))
+		
+		// ------------------------------------
+		// function declaration via expression
+        //	 -> practical usage
+		// ------------------------------------
+		
+		let x = 4;
+		let summa2;
+		if (x === 3) {
+			summa2 = function (a, b, c) {
+				return a + b + c;
+			};
+		} else if (x === 4) {
+			summa2 = function (a, b, c, d) {
+				return a + b + c + d;
+			};
+		} else {
+			summa2 = function() {
+				return 'Error!';
+			}
+		}
+
+        console.log("summa2=" + summa2(1,2,3,4))
+		
+    </script>
+</body>
+</html>

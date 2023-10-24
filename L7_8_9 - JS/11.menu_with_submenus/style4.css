@@ -1,0 +1,10 @@
+nav.menu ul ul {
+    opacity: 0;
+    max-height: 0;
+    transition-duration: 1s;
+}
+
+nav.menu ul ul.active {
+    max-height: 700px;
+    opacity: 1;
+}

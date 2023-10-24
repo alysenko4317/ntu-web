@@ -1,0 +1,36 @@
+/* Basic table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Table header styling */
+thead th {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table body rows styling */
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f5e0b0;
+}
+
+td {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+/* If you want to add more styles, expand from here */

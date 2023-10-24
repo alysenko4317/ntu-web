@@ -1,0 +1,14 @@
+#block {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+	border-color: blue !important;
+	border-width: 5px;
+}
+
+.round {
+    border-radius: 50%;
+    border: 1px solid red;
+    text-align: center;
+}

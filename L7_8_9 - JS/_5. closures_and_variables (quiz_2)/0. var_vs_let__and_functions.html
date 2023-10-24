@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let vs var & function def</title>
+</head>
+<body>
+    <h1>Результат</h1>
+    <p id="demo"></p>
+
+    <script>
+
+	let x = 10;
+	
+	if (x === 10) {
+		let one = function() {
+			console.log('one');
+		}
+		
+		one();
+	}
+
+	//one();
+		
+	if (x === 10) {
+		function two() {
+			console.log('two');
+		}
+		
+		two();
+	}
+	
+	two();
+	
+	window.two();
+	
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Div Example</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style for the container */
+        #container {
+            display: none; /* Initially hidden */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Show/Hide Div Example</h1>
+    <button onclick="toggleDiv()">Toggle Div</button>
+
+    <div id="container">
+        <h2>This is a hidden div</h2>
+        <p>This div can be shown and hidden using JavaScript.</p>
+    </div>
+
+    <script>
+        // JavaScript function to toggle the visibility of the div
+        function toggleDiv() {
+            var container = document.getElementById("container");
+            if (container.style.display === "none") {
+                container.style.display = "block"; // Show the div
+            } else {
+                container.style.display = "none"; // Hide the div
+            }
+        }
+    </script>
+</body>
+</html>

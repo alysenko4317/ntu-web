@@ -1,0 +1,14 @@
+.block {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.list {
+    list-style-type: none;
+}
+
+.list li {
+    margin: 5px 0;
+}

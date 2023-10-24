@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz 2</title>
+</head>
+<body>
+    <script>
+	    // Due to JavaScript's closure behavior, all functions in your array will alert the final value of i,
+		// which is 10. If you want to capture the value of i correctly in each function, you can use an
+		// immediately-invoked function expression (IIFE) to create a closure for each function.
+	/*
+        var funcs = [];
+        for (var i = 0; i < 10; i++) {
+			funcs[i] = function () {
+				alert(i);   // what will print the alert here ?
+			};
+		}
+		
+        funcs[3]();  // 10
+		funcs[4]();  // 10 */
+
+		var funcs = [];
+        for (var i = 0; i < 10; i++) {
+            let j = i;  // what it will be printed in case of using var ?
+            funcs[i] = function () {
+                alert(j);
+            };
+        }
+		
+        funcs[3]();
+		funcs[5]();
+		
+    </script>
+	<p>
+	<h2 class='sig'>Header Text</h2><p>
+</body>
+</html>

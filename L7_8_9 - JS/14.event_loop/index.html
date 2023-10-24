@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Execution Demonstration</title>
+</head>
+<body>
+    <h1>JavaScript Execution Demonstration</h1>
+    <p>Open the browser console to see the output.</p>
+
+    <script>
+        setInterval(function() {
+            console.log(".");
+        }, 1000);
+		
+		
+		/*
+        setTimeout(function() {
+            while (true) {
+                // марний нескінченний цикл
+            }
+        }, 5500);
+		*/
+		/* When you load this page in a browser, it will start logging "." every second.
+           After 10 milliseconds, the endless loop in the setTimeout function will begin,
+		   causing the tab to freeze. You won't be able to interact with it and may need
+		   to forcibly close the tab. */
+		
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Sibling Test</title>
+</head>
+<body>[
+    aaa]<h1><i>_</i>Hello</h1>[bbb]
+    <p>The text...</p>
+    <p>More text...</p>
+    <script>
+        var body = document.body;
+        var first = body.firstChild;
+        var b = first.nextSibling;
+        var c = first.nextSibling.nextSibling;
+		var d = first.nextSibling.nextSibling.nextSibling;
+		var e = first.nextSibling.firstChild.nextSibling;
+        console.log("first:", first);
+        console.log("b:", b);
+        console.log("c:", c);
+		console.log("d:", d);
+		console.log("e:", e);
+		
+		funcs = []
+		for (var i = 0; i < 10; i++) {
+		    funcs[i] = function() { alert(i) };
+		}
+		funcs[3]();
+    </script>[
+xxx]</body>
+</html>

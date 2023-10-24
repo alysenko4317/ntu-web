@@ -1,0 +1,5 @@
+java/client/.idea
+java/client/target
+java/hello_servlet/.idea
+python/client/.ipynb_checkpoints
+python/simple_http_server/.idea

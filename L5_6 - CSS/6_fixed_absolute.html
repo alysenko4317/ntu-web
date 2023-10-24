@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog with Fixed and Absolute Positioning</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styles for the dialog */
+        .dialog-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 1000; /* Ensure the dialog appears above other content */
+            max-height: 70%; /* Adjust the maximum height as needed */
+            overflow: auto; /* Enable scrolling if content exceeds max height */
+        }
+
+        /* Styles for the close button */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Styles for the buttons inside the dialog */
+        .dialog-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dialog with Fixed and Absolute Positioning</h1>
+    <button onclick="showDialog()">Show Dialog</button>
+
+    <!-- Hidden dialog initially -->
+    <div class="dialog-container" id="dialog" style="display: none;">
+        <button class="close-button" onclick="closeDialog()">X</button>
+        <h2>Dialog Title</h2>
+        <p>This is a dialog with some content. This content can be long enough to require scrolling if necessary. This content can be long enough to require scrolling if necessary. This content can be long enough to require scrolling if necessary. This content can be long enough to require scrolling if necessary.</p>
+        <button class="dialog-button" onclick="alert('Button 1 clicked')">Button 1</button>
+        <button class="dialog-button" onclick="alert('Button 2 clicked')">Button 2</button>
+        <button class="dialog-button" onclick="alert('Button 3 clicked')">Button 3</button>
+    </div>
+
+    <script>
+        // JavaScript functions to show and hide the dialog
+        function showDialog() {
+            var dialog = document.getElementById("dialog");
+            dialog.style.display = "block";
+        }
+
+        function closeDialog() {
+            var dialog = document.getElementById("dialog");
+            dialog.style.display = "none";
+        }
+    </script>
+</body>
+</html>
