@@ -25,11 +25,13 @@ SECRET_KEY = 'django-insecure-=%a0jwrul$tky*@z*0me0szbpeyl$)%kf=2(2q*_eil1))^(o!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
+# Description: INSTALLED_APPS is a setting that defines the list of all installed Django applications in your project.
+# These applications can be either built-in Django apps or custom apps that you create. Each app may provide models,
+# views, templates, and other components that contribute to the functionality of your Django project.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +42,10 @@ INSTALLED_APPS = [
     'crm'
 ]
 
+# Description: MIDDLEWARE is a setting that defines a list of middleware classes that Django will apply to HTTP
+# requests and responses. Middleware functions as a series of hooks that can perform various tasks such as request
+# processing, response modification, and authentication checks. Middleware can be used to add functionality
+# to your application's request/response cycle.
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,11 +56,31 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Description: ROOT_URLCONF is a setting that specifies the Python module (or file) containing the URL patterns
+# for your Django project. URL patterns define how incoming URLs are mapped to views and controllers in your
+# application. The ROOT_URLCONF setting is essential for routing incoming requests to the appropriate parts
+# of your application.
+
 ROOT_URLCONF = 'my_first_project.urls'
+
+# In modern Django projects, the TEMPLATES configuration is the more common and recommended way to set up
+# template-related options, and it has largely replaced the use of TEMPLATES_DIR.
+#
+# In older versions of Django, it was common to use a TEMPLATES_DIR setting to specify the directory where
+# template files were located. However, in more recent versions of Django (Django 1.8 and later), the TEMPLATES
+# configuration was introduced to provide a more flexible and powerful way to configure template options.
+#
+# The TEMPLATES configuration allows you to define multiple template engines, context processors, loaders,
+# and other template-related settings in a more structured and comprehensive manner. It provides greater
+# flexibility and control over how templates are loaded and rendered in your Django project.
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+        # The 'DIRS' option within the TEMPLATES configuration allows you to specify additional directories
+        # where Django should look for template files, similar to the older TEMPLATES_DIR setting.
+        # The 'APP_DIRS' option, when set to True, tells Django to also search for templates within the app directories.
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -68,12 +94,20 @@ TEMPLATES = [
     },
 ]
 
+# Description: WSGI_APPLICATION is a setting that specifies the Python path to the WSGI (Web Server Gateway Interface)
+# application for your Django project. WSGI is a standard interface that allows web servers to communicate with web
+# applications. This setting is used to configure how your Django application is served by a WSGI server, such as
+# Gunicorn or uWSGI.
 WSGI_APPLICATION = 'my_first_project.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+#
+# Description: DATABASES is a setting that defines the configuration for one or more databases that your Django
+# application will use. It allows you to specify database engines, connection details, credentials, and other
+# database-related settings. Django supports multiple database configurations, enabling you to work with different
+# databases or database replicas.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
