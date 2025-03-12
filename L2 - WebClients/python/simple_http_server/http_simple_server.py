@@ -14,7 +14,7 @@ class SimpleHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Hello, World!")
+            self.wfile.write(b"<b>Hello, World!</b>")
         else:
             # for all other routes, serve files from the current directory
             super().do_GET()

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрація dialog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        dialog {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Демонстрація тега &lt;dialog&gt;</h2>
+    <button id="openDialog">Відкрити діалог</button>
+
+    <dialog id="myDialog">
+        <h3>Привіт!</h3>
+        <p>Це модальне вікно, створене за допомогою тега &lt;dialog&gt;.</p>
+        <button id="closeDialog">Закрити</button>
+    </dialog>
+
+    <script>
+        const dialog = document.getElementById("myDialog");
+        const openButton = document.getElementById("openDialog");
+        const closeButton = document.getElementById("closeDialog");
+
+        openButton.addEventListener("click", () => {
+            dialog.showModal(); // Відкриває діалог як модальне вікно
+        });
+
+        closeButton.addEventListener("click", () => {
+            dialog.close(); // Закриває діалогове вікно
+        });
+    </script>
+
+</body>
+</html>

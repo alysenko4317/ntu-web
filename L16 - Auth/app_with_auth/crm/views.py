@@ -29,7 +29,7 @@ def login(request):
             )
             return response
         else:
-            error = u'Неверный логин / пароль'
+            error = 'Невірний логін / пароль'
 
     return render(request, 'login.html', {'error': error})
 

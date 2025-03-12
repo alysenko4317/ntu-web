@@ -20,10 +20,12 @@ def create_post(request):
         form = PostForm()
     return render(request, 'create_post.html', {'form': form})
 
+
 # View to view a post by its primary key (pk)
 def view_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'view_post.html', {'post': post})
+
 
 # View to update a post by its primary key (pk)
 def update_post(request, pk):
@@ -36,6 +38,7 @@ def update_post(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'update_post.html', {'form': form, 'post': post})
+
 
 # View to delete a post by its primary key (pk)
 def delete_post(request, pk):

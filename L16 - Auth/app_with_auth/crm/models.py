@@ -15,6 +15,7 @@ class Session(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     expires = models.DateTimeField()
 
+
     def __str__(self):
         return f"Session for {self.user} (Key: {self.key})"
 

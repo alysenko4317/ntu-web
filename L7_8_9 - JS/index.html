@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>TypeScript з файлу</title>
+</head>
+<body>
+  <h2>Завантаж .ts файл і побач результат:</h2>
+
+  <input type="file" id="fileInput" accept=".ts"><br><br>
+  <h3>Вивід:</h3>
+  <pre id="output"></pre>
+
+  <!-- Підключаємо TypeScript-компілятор -->
+  <script type="module">
+    import * as ts from "https://esm.sh/typescript@5.3.3";
+
+    const fileInput = document.getElementById("fileInput");
+    const output = document.getElementById("output");
+
+    fileInput.addEventListener("change", async (event) => {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const text = await file.text();             // Читаємо .ts файл
+      const jsCode = ts.transpile(text);          // Компілюємо в JavaScript
+      output.textContent = "JS-код:\n" + jsCode;  // Показуємо згенерований код
+
+      try {
+        eval(jsCode);                             // Виконуємо код
+      } catch (err) {
+        output.textContent += "\n\n❌ Помилка виконання: " + err;
+      }
+    });
+  </script>
+</body>
+</html>

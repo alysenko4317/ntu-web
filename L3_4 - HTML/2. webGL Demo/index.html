@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Приклад використання WebGL</title>
+  <style>
+    canvas { border: 1px solid #000; }
+  </style>
+</head>
+<body>
+  <canvas id="glCanvas" width="500" height="500"></canvas>
+  <script type="text/javascript">
+    // Отримання WebGL контексту
+    const canvas = document.getElementById("glCanvas");
+    let gl = canvas.getContext("webgl");
+    
+    if (!gl) {
+      console.log("WebGL не підтримується, пробуємо experimental-webgl");
+      gl = canvas.getContext("experimental-webgl");
+    }
+    
+    if (!gl) {
+      alert("Ваш браузер не підтримує WebGL");
+    }
+    
+    // Встановлення кольору очищення (чорний)
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    
+    // Вершинний шейдер
+    const vsSource = `
+      attribute vec2 aVertexPosition;
+      void main(void) {
+        gl_Position = vec4(aVertexPosition, 0.0, 1.0);
+      }
+    `;
+    
+    // Фрагментний шейдер
+    const fsSource = `
+      void main(void) {
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); // Червоний колір
+      }
+    `;
+    
+    // Функція для компіляції шейдеру
+    function loadShader(type, source) {
+      const shader = gl.createShader(type);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        alert("Помилка компіляції шейдеру: " + gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+      }
+      return shader;
+    }
+    
+    // Створення шейдерної програми
+    const vertexShader = loadShader(gl.VERTEX_SHADER, vsSource);
+    const fragmentShader = loadShader(gl.FRAGMENT_SHADER, fsSource);
+    
+    const shaderProgram = gl.createProgram();
+    gl.attachShader(shaderProgram, vertexShader);
+    gl.attachShader(shaderProgram, fragmentShader);
+    gl.linkProgram(shaderProgram);
+    
+    if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+      alert("Не вдалося ініціалізувати шейдерну програму: " + gl.getProgramInfoLog(shaderProgram));
+    }
+    
+    gl.useProgram(shaderProgram);
+    
+    // Визначення даних вершин для трикутника
+    const vertices = new Float32Array([
+       0.0,  0.5,
+      -0.5, -0.5,
+       0.5, -0.5
+    ]);
+    
+    // Створення буфера для вершин
+    const vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+    
+    // Отримання атрибуту розташування вершин з шейдеру
+    const aVertexPosition = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+    gl.enableVertexAttribArray(aVertexPosition);
+    gl.vertexAttribPointer(aVertexPosition, 2, gl.FLOAT, false, 0, 0);
+    
+    // Малювання трикутника
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  </script>
+</body>
+</html>
