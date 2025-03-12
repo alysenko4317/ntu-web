@@ -1,0 +1,10 @@
+
+version: '3.8'
+services:
+  web:
+    image: my-apache2  # Or use httpd:2.4 if not building a custom image
+    container_name: my-apache2
+    ports:
+      - "8082:80"
+    volumes:
+      - ./public-html/:/usr/local/apache2/htdocs/
