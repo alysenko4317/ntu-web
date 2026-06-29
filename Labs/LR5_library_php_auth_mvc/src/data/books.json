@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "code": "PRG-001",
+    "name": "Clean Code",
+    "release_date": "2008",
+    "authors": [
+      { "id": 1, "first_name": "Robert", "last_name": "Martin" }
+    ]
+  },
+  {
+    "id": 2,
+    "code": "SWE-014",
+    "name": "Design Patterns",
+    "release_date": "1994",
+    "authors": [
+      { "id": 2, "first_name": "Erich", "last_name": "Gamma" },
+      { "id": 3, "first_name": "Richard", "last_name": "Helm" }
+    ]
+  },
+  {
+    "id": 3,
+    "code": "ALG-101",
+    "name": "Introduction to Algorithms",
+    "release_date": "1990",
+    "authors": [
+      { "id": 4, "first_name": "Thomas", "last_name": "Cormen" },
+      { "id": 5, "first_name": "Charles", "last_name": "Leiserson" }
+    ]
+  },
+  {
+    "id": 4,
+    "code": "WEB-007",
+    "name": "JavaScript: The Good Parts",
+    "release_date": "2008",
+    "authors": [
+      { "id": 6, "first_name": "Douglas", "last_name": "Crockford" }
+    ]
+  },
+  {
+    "id": 5,
+    "code": "NET-003",
+    "name": "Computer Networking: A Top-Down Approach",
+    "release_date": "2000",
+    "authors": [
+      { "id": 7, "first_name": "James", "last_name": "Kurose" },
+      { "id": 8, "first_name": "Keith", "last_name": "Ross" }
+    ]
+  },
+  {
+    "id": 6,
+    "code": "DB-022",
+    "name": "Database System Concepts",
+    "release_date": "1986",
+    "authors": [
+      { "id": 9, "first_name": "Abraham", "last_name": "Silberschatz" }
+    ]
+  },
+  {
+    "id": 7,
+    "code": "OS-010",
+    "name": "Operating System Concepts",
+    "release_date": "1983",
+    "authors": [
+      { "id": 9, "first_name": "Abraham", "last_name": "Silberschatz" }
+    ]
+  },
+  {
+    "id": 8,
+    "code": "PRG-042",
+    "name": "The Pragmatic Programmer",
+    "release_date": "1999",
+    "authors": [
+      { "id": 10, "first_name": "Andrew", "last_name": "Hunt" },
+      { "id": 11, "first_name": "David", "last_name": "Thomas" }
+    ]
+  },
+  {
+    "id": 9,
+    "code": "PRG-055",
+    "name": "Refactoring",
+    "release_date": "1999",
+    "authors": [
+      { "id": 12, "first_name": "Martin", "last_name": "Fowler" }
+    ]
+  },
+  {
+    "id": 10,
+    "code": "ML-001",
+    "name": "Pattern Recognition and Machine Learning",
+    "release_date": "2006",
+    "authors": [
+      { "id": 13, "first_name": "Christopher", "last_name": "Bishop" }
+    ]
+  }
+]

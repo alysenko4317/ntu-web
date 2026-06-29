@@ -1,4 +1,5 @@
 /*.lnk
 .idea
 present
+*.pyc
 

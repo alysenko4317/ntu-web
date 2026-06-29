@@ -16,7 +16,7 @@
 | ЛР2 | Мережеві утиліти та протоколи | [`LR2_networks_basics/`](LR2_networks_basics/) | `lab2_net_utils_and_protocols.docx` | — |
 | ЛР3 | JavaScript, статичний сайт (еталон: бібліотека) | [`LR3_library_static_site/`](LR3_library_static_site/) | `lab3_js_basics.docx` | [`src/`](LR3_library_static_site/src/) |
 | ЛР4 | PHP: сесії та авторизація (еталон: бібліотека) | [`LR4_library_php_auth/`](LR4_library_php_auth/) | `lab4_php_auth.docx` | [`src/`](LR4_library_php_auth/src/) |
-| ЛР5 | PHP: MVC-архітектура | [`LR5_library_php_auth_mvc/`](LR5_library_php_auth_mvc/) | `lab5_php_auth_mvc.docx` | *(у розробці)* |
+| ЛР5 | PHP: MVC-архітектура (еталон: бібліотека) | [`LR5_library_php_auth_mvc/`](LR5_library_php_auth_mvc/) | `lab5_php_auth_mvc.docx` | [`src/`](LR5_library_php_auth_mvc/src/) |
 
 ---
 
@@ -76,6 +76,8 @@
 
 **Ключові технології:** PHP, `$_SESSION`, `password_hash()` / `password_verify()`, JSON-сховище користувачів, спільний layout (`includes/layout.php`).
 
+**Самостійна частина** (не входить до еталону в `src/`): серверна контактна форма (`data/messages.json`) і редагування профілю в кабінеті — див. [`INDIVIDUAL_TASK.md`](LR4_library_php_auth/INDIVIDUAL_TASK.md).
+
 **Передумови:** власний сайт з ЛР3, Apache + PHP (рекомендовано WSL).
 
 ---
@@ -84,15 +86,17 @@
 
 **Мета:** реорганізувати **власний** PHP-застосунок (з ЛР4) за шаблоном Model–View–Controller: розділити логіку, представлення та маршрутизацію.
 
-> Еталонний код для ЛР5 готується окремо; на момент публікації репозиторію доступна лише методичка. Тема бібліотеки в назві каталогу — так само демонстраційна, як у ЛР3–ЛР4.
+> Еталон у `LR5_library_php_auth_mvc/src/` — рефакторинг ЛР4 до MVC за рекомендованою структурою: `public/` (DocumentRoot, CSS/JS), `app/` (Controller, Service, Repository, Model, Framework, View), `data/` (JSON-сховище), `config/` (маршрути). Front Controller, `Framework/Router`, `Framework/ClassLoader`, Controller → Service → Repository → JSON. Тема бібліотеки демонстраційна.
 
 | Компонент | Опис |
 |-----------|------|
 | [`lab5_php_auth_mvc.docx`](LR5_library_php_auth_mvc/lab5_php_auth_mvc.docx) | Методичні вказівки |
+| [`src/`](LR5_library_php_auth_mvc/src/) | Вихідний код еталонного рішення |
+| [`README.md`](LR5_library_php_auth_mvc/README.md) | Документація та інструкція з запуску |
+
+**Ключові компоненти:** `public/index.php` (Front Controller), `config/routes.php`, `Framework/Router.php`, `Framework/ClassLoader.php`, `Controller/ → Service/ → Repository/ → data/*.json`.
 
 **Передумови:** ЛР4.
-
-> Еталонний код для ЛР5 готується окремо; на момент публікації репозиторію доступна лише методичка.
 
 ---
 
