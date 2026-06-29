@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна — Library Base</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">LB</span>
+      <span>Library Base</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Відкрити меню">☰</button>
+    <nav class="site-nav">
+      <a class="nav-link active" href="index.html">Головна</a>
+<a class="nav-link " href="catalog.html">Каталог</a>
+<a class="nav-link " href="about.html">Про бібліотеку</a>
+<a class="nav-link " href="contacts.html">Контакти</a>
+    </nav>
+    <div class="auth-links">
+      <a class="btn btn-outline" href="login.html">Увійти</a>
+      <a class="btn btn-primary" href="register.html">Реєстрація</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Навчальний проєкт</p>
+      <h1>Електронна бібліотека з каталогом книг і формами користувача</h1>
+      <p class="lead">Це статична версія сайту, створена після лабораторних робіт з HTML, CSS і JavaScript. На наступному етапі до неї можна додати серверну авторизацію засобами PHP.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="catalog.html">Перейти до каталогу</a>
+        <a class="btn btn-outline" href="register.html">Створити читацький профіль</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h2>Що вже є у статичній версії?</h2>
+      <ul class="check-list">
+        <li>багатосторінкова структура сайту;</li>
+        <li>адаптивна навігація;</li>
+        <li>каталог із пошуком на JavaScript;</li>
+        <li>форми реєстрації, входу й контактів;</li>
+        <li>клієнтська перевірка введених даних.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-header">
+    <div>
+      <p class="eyebrow">Популярні книги</p>
+      <h2>Топ видань бібліотеки</h2>
+    </div>
+    <a href="catalog.html" class="text-link">Увесь каталог →</a>
+  </div>
+  <div class="book-grid">
+    
+    <article class="book-card">
+      <div class="book-cover">PRG-001</div>
+      <div class="book-info">
+        <span class="badge">Programming</span>
+        <h3>Clean Code</h3>
+        <p>Robert C. Martin</p>
+      </div>
+    </article>
+    
+    <article class="book-card">
+      <div class="book-cover">SWE-014</div>
+      <div class="book-info">
+        <span class="badge">Software Engineering</span>
+        <h3>Design Patterns</h3>
+        <p>Erich Gamma et al.</p>
+      </div>
+    </article>
+    
+    <article class="book-card">
+      <div class="book-cover">ALG-101</div>
+      <div class="book-info">
+        <span class="badge">Algorithms</span>
+        <h3>Introduction to Algorithms</h3>
+        <p>Cormen, Leiserson, Rivest, Stein</p>
+      </div>
+    </article>
+    
+  </div>
+</section>
+
+<section class="container section two-columns">
+  <div class="card">
+    <h2>Для чого ця версія сайту?</h2>
+    <p>Вона імітує результат попередніх лабораторних робіт: студенти вже мають готовий статичний сайт, який можна розгортати через Apache HTTP Server.</p>
+  </div>
+  <div class="card">
+    <h2>Що буде далі?</h2>
+    <p>На наступній лабораторній роботі сторінки можна перетворити на PHP-сторінки, підключити серверну обробку форм, сесії та захищений кабінет користувача.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Library Base</strong>
+      <p>Навчальний статичний сайт електронної бібліотеки для лабораторних робіт з веб-технологій.</p>
+    </div>
+    <div>
+      <strong>Розділи</strong>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">Про бібліотеку</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div>
+      <strong>Далі у курсі</strong>
+      <p>Цей сайт можна буде перенести на PHP і додати серверну реєстрацію, авторизацію та сесії.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -20,7 +20,7 @@ def hello():
 def hello2():
     # accessing query parameters or form data
     name = request.args.get('name', request.form.get('name', 'Anonymous'))
-
+90pp
     # accessing headers
     user_agent = request.headers.get('User-Agent')  # Get the value of the 'User-Agent' header
     x_token = request.headers.get('X-token')  # Get the value of the 'X-token' header

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — Library Base</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">LB</span>
+      <span>Library Base</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Відкрити меню">☰</button>
+    <nav class="site-nav">
+      <a class="nav-link " href="index.html">Головна</a>
+<a class="nav-link " href="catalog.html">Каталог</a>
+<a class="nav-link " href="about.html">Про бібліотеку</a>
+<a class="nav-link active" href="contacts.html">Контакти</a>
+    </nav>
+    <div class="auth-links">
+      <a class="btn btn-outline" href="login.html">Увійти</a>
+      <a class="btn btn-primary" href="register.html">Реєстрація</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-title">
+  <div class="container">
+    <p class="eyebrow">Контакти</p>
+    <h1>Зв’язок із бібліотекою</h1>
+    <p>Форма нижче поки що працює лише на стороні браузера та демонструє клієнтську перевірку даних.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <form class="form-card" id="contact-form" novalidate>
+    <div class="form-row">
+      <label for="contact-name">Ім’я</label>
+      <input type="text" id="contact-name" name="name" required minlength="2">
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="email" required>
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="contact-message">Повідомлення</label>
+      <textarea id="contact-message" name="message" rows="5" required minlength="10"></textarea>
+      <span class="field-error"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">Надіслати</button>
+    <p class="form-message" id="contact-form-message"></p>
+  </form>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Library Base</strong>
+      <p>Навчальний статичний сайт електронної бібліотеки для лабораторних робіт з веб-технологій.</p>
+    </div>
+    <div>
+      <strong>Розділи</strong>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">Про бібліотеку</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div>
+      <strong>Далі у курсі</strong>
+      <p>Цей сайт можна буде перенести на PHP і додати серверну реєстрацію, авторизацію та сесії.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
