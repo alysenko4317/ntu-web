@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Якщо проєкт розташовано у підкаталозі Apache (наприклад /lr6/), змініть RewriteBase:
+    # RewriteBase /lr6/
+    RewriteBase /
+
+    # Не перенаправляти запити до існуючих файлів і каталогів
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Всі інші запити передати на index.php для маршрутизації
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

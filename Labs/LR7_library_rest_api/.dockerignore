@@ -1,0 +1,7 @@
+*.docx
+*.md
+Dockerfile
+.dockerignore
+docker-compose.yml
+database/
+swagger/

@@ -1,0 +1,47 @@
+services:
+
+  app:
+    build: .
+    container_name: lr6-php-app
+    ports:
+      - "8086:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: library
+      DB_USER: library_user
+      DB_PASSWORD: library_pass
+    networks:
+      - lr6-network
+
+  db:
+    image: mysql:8.0
+    container_name: lr6-mysql-db
+    restart: unless-stopped
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: library
+      MYSQL_USER: library_user
+      MYSQL_PASSWORD: library_pass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_pass"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - lr6-network
+
+networks:
+  lr6-network:
+    driver: bridge
+
+volumes:
+  db_data:
