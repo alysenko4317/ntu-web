@@ -173,3 +173,7 @@ docker compose down -v && docker compose up --build
 | **init.sql** | Автоматична ініціалізація бази при першому запуску |
 | **PDO** | Безпечне підключення до БД з prepared statements |
 | **Repository pattern** | Заміна JSON → MySQL без змін у Controller / Service |
+
+---
+
+[← Повернутися до переліку лабораторних робіт](../README.md)

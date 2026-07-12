@@ -191,3 +191,7 @@ docker compose down -v && docker compose up --build
 | **Змінні оточення** | `TELEGRAM_BOT_TOKEN` через `.env`, `API_BASE_URL` через compose |
 | **4 Docker-контейнери** | PHP, MySQL, Python, Swagger UI — одна мережа |
 | **Повторне використання** | Бот не має прямого доступу до БД — лише через REST API |
+
+---
+
+[← Повернутися до переліку лабораторних робіт](../README.md)

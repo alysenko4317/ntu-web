@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реєстрація — Library Base</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">
+      <span class="logo-mark">LB</span>
+      <span>Library Base</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nav-link" href="index.html">Головна</a>
+      <a class="nav-link" href="catalog.html">Каталог</a>
+      <a class="nav-link" href="about.html">Про бібліотеку</a>
+      <a class="nav-link" href="contacts.html">Контакти</a>
+    </nav>
+    <div class="auth-links">
+      <a class="btn btn-outline" href="login.html">Увійти</a>
+      <a class="btn btn-primary" href="register.html">Реєстрація</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="page-title">
+  <div class="container">
+    <p class="eyebrow">Реєстрація</p>
+    <h1>Створення читацького профілю</h1>
+    <p>Це статична форма реєстрації. У ЛР4 ці дані будуть оброблятися на сервері засобами PHP.</p>
+  </div>
+</section>
+
+<section class="container section narrow">
+  <form class="form-card" id="register-form">
+    <div class="form-row">
+      <label for="reader-name">Ім'я</label>
+      <input type="text" id="reader-name" name="name" required minlength="2">
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="reader-email">Email</label>
+      <input type="email" id="reader-email" name="email" required>
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="reader-ticket">Номер читацького квитка</label>
+      <input type="text" id="reader-ticket" name="ticket" required minlength="3">
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="reader-room">Зал бібліотеки</label>
+      <select id="reader-room" name="room" required>
+        <option value="">Оберіть зал</option>
+        <option value="large">Велика зала</option>
+        <option value="middle">Середня зала</option>
+        <option value="small">Мала зала</option>
+      </select>
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="reader-password">Пароль</label>
+      <input type="password" id="reader-password" name="password" required minlength="6">
+      <span class="field-error"></span>
+    </div>
+    <div class="form-row">
+      <label for="reader-password-confirm">Підтвердження пароля</label>
+      <input type="password" id="reader-password-confirm" name="password_confirm" required>
+      <span class="field-error"></span>
+    </div>
+    <button class="btn btn-primary w-100" type="submit">Зареєструватися</button>
+  </form>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Library Base</strong>
+      <p>Навчальний статичний сайт електронної бібліотеки для лабораторних робіт з веб-технологій.</p>
+    </div>
+    <div>
+      <strong>Розділи</strong>
+      <a href="catalog.html">Каталог</a>
+      <a href="about.html">Про бібліотеку</a>
+      <a href="contacts.html">Контакти</a>
+    </div>
+    <div>
+      <strong>Далі у курсі</strong>
+      <p>У ЛР3 буде додано JavaScript, у ЛР4 — серверну реєстрацію, авторизацію та сесії на PHP.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

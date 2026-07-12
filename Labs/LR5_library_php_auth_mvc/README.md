@@ -104,3 +104,7 @@ sudo chmod -R 775 /var/www/html/lr5/data
 | **Модель** | POPO — Plain Old PHP Object для передачі даних |
 | **View** | PHP-шаблон з CSS/JS з ЛР4 |
 | **Конфігурація** | `config/routes.php` — окремий файл, повертає масив |
+
+---
+
+[← Повернутися до переліку лабораторних робіт](../README.md)
