@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Таблиці</title>
+</head>
+<body>
+    <h1>Приклад HTML-таблиці</h1>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <caption>Розклад занять (понеділок)</caption>
+
+        <thead>
+            <tr>
+                <th>Час</th>
+                <th>Предмет</th>
+                <th>Аудиторія</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>08:30 – 10:05</td>
+                <td>Основи веб-технологій</td>
+                <td>301</td>
+            </tr>
+            <tr>
+                <td>10:25 – 12:00</td>
+                <td>Бази даних</td>
+                <td>215</td>
+            </tr>
+            <tr>
+                <td>12:20 – 13:55</td>
+                <td>Фізичне виховання</td>
+                <td>Спортзал</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Об'єднання комірок</h2>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>Мова</th>
+            <th>Сторона</th>
+            <th>Приклади</th>
+        </tr>
+        <tr>
+            <td rowspan="2">HTML</td>
+            <td>Клієнт</td>
+            <td>Структура сторінки</td>
+        </tr>
+        <tr>
+            <td>Клієнт</td>
+            <td>Форми введення</td>
+        </tr>
+        <tr>
+            <td>PHP</td>
+            <td>Сервер</td>
+            <td>Обробка даних</td>
+        </tr>
+        <tr>
+            <td colspan="2">JavaScript</td>
+            <td>Клієнт і сервер (Node.js)</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семантична структура HTML5</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; color: #333; }
+        header, footer { background: #2c3e50; color: #fff; padding: 1rem 2rem; }
+        nav { background: #34495e; padding: 0.5rem 2rem; }
+        nav a { color: #ecf0f1; margin-right: 1rem; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        main { display: flex; max-width: 960px; margin: 1rem auto; gap: 1.5rem; padding: 0 1rem; }
+        article { flex: 3; }
+        aside { flex: 1; background: #f4f4f4; padding: 1rem; border-radius: 4px; }
+        footer { text-align: center; margin-top: 2rem; }
+        section { margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Мій навчальний блог</h1>
+        <p>Нотатки з курсу «Основи веб-технологій»</p>
+    </header>
+
+    <nav>
+        <a href="#">Головна</a>
+        <a href="#">Статті</a>
+        <a href="#">Про автора</a>
+        <a href="#">Контакти</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Що таке HTML?</h2>
+            <p>
+                <strong>HTML</strong> (HyperText Markup Language) — мова розмітки,
+                яка описує структуру вебсторінки. Браузер інтерпретує HTML-код
+                і відображає його у вигляді візуального документа.
+            </p>
+
+            <section>
+                <h3>Основні принципи</h3>
+                <ul>
+                    <li>HTML задає <em>структуру</em>, а не зовнішній вигляд.</li>
+                    <li>CSS відповідає за <em>оформлення</em>.</li>
+                    <li>JavaScript забезпечує <em>інтерактивність</em>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Семантичні теги HTML5</h3>
+                <p>
+                    Семантичні теги (<code>&lt;header&gt;</code>,
+                    <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                    <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+                    <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>)
+                    роблять структуру сторінки зрозумілою для браузерів,
+                    пошукових систем і допоміжних технологій.
+                </p>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Корисні посилання</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/uk/docs/Web/HTML">MDN Web Docs</a></li>
+                <li><a href="https://html.spec.whatwg.org/">HTML Living Standard</a></li>
+                <li><a href="https://validator.w3.org/">W3C Validator</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Основи веб-технологій</p>
+    </footer>
+
+</body>
+</html>
