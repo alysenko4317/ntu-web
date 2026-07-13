@@ -6,6 +6,7 @@
 |--------|------|---------|
 | L1 | Вступ до вебтехнологій | [`L1 - Intro/`](L1%20-%20Intro/) |
 | L2 | HTML, структура веб-сторінки, Docker, сучасні веб-API | [`L2 - HTML/`](L2%20-%20HTML/) |
+| L3 | CSS, Bootstrap, адаптивна верстка | [`L3 - CSS/`](L3%20-%20CSS/) |
 
 ---
 
@@ -51,6 +52,29 @@
 | [`4.webWorker.docker-apache/`](L2%20-%20HTML/src/js/4.webWorker.docker-apache/) | Web Workers у Docker-середовищі |
 
 Детальний опис, інструкції з запуску та зв'язок з ЛР1 — у [`README.md`](L2%20-%20HTML/README.md).
+
+---
+
+## L3 — CSS
+
+**Тема:** каскадні таблиці стилів, селектори, позиціонування, Bootstrap.
+
+Усі приклади розташовані в [`L3 - CSS/src/`](L3%20-%20CSS/src/):
+
+| Файл | Тема |
+|------|------|
+| [`0.font_tags.html`](L3%20-%20CSS/src/0.font_tags.html) | Застарілі HTML-теги оформлення (`<font>`, `<b>`) |
+| [`1.inline_styles.html`](L3%20-%20CSS/src/1.inline_styles.html) | Вбудовані стилі (`style=""`) |
+| [`2.external_css.html`](L3%20-%20CSS/src/2.external_css.html) | Зовнішня таблиця стилів + теми (`dark.css`, `flat.css`, `bw.css`) |
+| [`4.pseudo.html`](L3%20-%20CSS/src/4.pseudo.html) | Псевдоелементи `::before`, `::after` |
+| [`5.display_none.html`](L3%20-%20CSS/src/5.display_none.html) | Властивість `display` і показ/приховування |
+| [`6.fixed_absolute.html`](L3%20-%20CSS/src/6.fixed_absolute.html) | Позиціонування `fixed` та `absolute` |
+| [`7.bootstrap_ui.html`](L3%20-%20CSS/src/7.bootstrap_ui.html) | Компоненти Bootstrap (navbar, cards) |
+| [`8.bootstrap_grid.html`](L3%20-%20CSS/src/8.bootstrap_grid.html) | Адаптивна сітка Bootstrap |
+| [`9.dialog.html`](L3%20-%20CSS/src/9.dialog.html) | Нативний HTML-елемент `<dialog>` |
+| [`a.bootstrap_tabs.html`](L3%20-%20CSS/src/a.bootstrap_tabs.html) | Вкладки Bootstrap 5 |
+
+Детальний опис та зв'язок з лабораторним практикумом — у [`README.md`](L3%20-%20CSS/README.md).
 
 ---
 
