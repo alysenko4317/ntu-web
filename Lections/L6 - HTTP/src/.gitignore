@@ -1,0 +1,5 @@
+﻿**/target/
+**/.idea/
+**/.ipynb_checkpoints/
+**/*.iml
+**/__pycache__/

@@ -6,7 +6,7 @@ import java.net.URL;
 public class HttpClient {
     public static void main(String[] args) {
         try {
-            // Specify the URL you want to send the GET request to
+            // Потрібен запущений 1.simple_http_server (порт 8001)
             URL url = new URL("http://localhost:8001/hello");
             
             // Open the connection to the URL

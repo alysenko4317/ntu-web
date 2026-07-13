@@ -18,6 +18,7 @@
 | L3 | CSS, Bootstrap, адаптивна верстка | [`L3 - CSS/`](L3%20-%20CSS/) |
 | L4 | JavaScript — основи мови, DOM, події | [`L4 - JS_Basics/`](L4%20-%20JS_Basics/) |
 | L5 | JavaScript — замикання, прототипи, класи, модулі | [`L5 - JS_OOP/`](L5%20-%20JS_OOP/) |
+| L6 | Протокол HTTP, клієнт і сервер | [`L6 - HTTP/`](L6%20-%20HTTP/) |
 
 ---
 
