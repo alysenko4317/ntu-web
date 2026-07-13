@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Замикання — лічильник</title>
+</head>
+<body>
+    <h1>Замикання (Closures)</h1>
+    <p>Результати — у консолі (F12).</p>
+
+    <button id="btnA">Лічильник A</button>
+    <span id="valA">0</span>
+
+    <button id="btnB">Лічильник B</button>
+    <span id="valB">0</span>
+
+    <script>
+        function createCounter(name) {
+            let count = 0;
+            return function () {
+                count += 1;
+                console.log(`${name}: ${count}`);
+                return count;
+            };
+        }
+
+        const counterA = createCounter("A");
+        const counterB = createCounter("B");
+
+        document.getElementById("btnA").addEventListener("click", function () {
+            document.getElementById("valA").textContent = counterA();
+        });
+
+        document.getElementById("btnB").addEventListener("click", function () {
+            document.getElementById("valB").textContent = counterB();
+        });
+    </script>
+</body>
+</html>

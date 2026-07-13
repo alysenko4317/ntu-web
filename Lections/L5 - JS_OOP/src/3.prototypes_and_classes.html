@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Прототипи та класи</title>
+</head>
+<body>
+    <h1>Прототипи та класи</h1>
+    <p>Результати — у консолі (F12).</p>
+
+    <script>
+        // ========== Частина 1: функція-конструктор + prototype ==========
+
+        console.log("=== Функція-конструктор ===");
+
+        function Animal(name) {
+            this.name = name;
+        }
+        Animal.prototype.speak = function () {
+            console.log(`${this.name} видає звук.`);
+        };
+
+        function Dog(name, breed) {
+            Animal.call(this, name);
+            this.breed = breed;
+        }
+        Dog.prototype = Object.create(Animal.prototype);
+        Dog.prototype.constructor = Dog;
+
+        Dog.prototype.speak = function () {
+            console.log(`${this.name} гавкає!`);
+        };
+
+        const rex = new Dog("Рекс", "вівчарка");
+        rex.speak();
+        console.log("rex instanceof Dog:", rex instanceof Dog);
+        console.log("rex instanceof Animal:", rex instanceof Animal);
+
+        // ========== Частина 2: те саме через class ==========
+
+        console.log("\n=== Синтаксис class ===");
+
+        class AnimalClass {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log(`${this.name} видає звук.`);
+            }
+        }
+
+        class DogClass extends AnimalClass {
+            #breed; // приватне поле
+
+            constructor(name, breed) {
+                super(name);
+                this.#breed = breed;
+            }
+
+            speak() {
+                console.log(`${this.name} гавкає!`);
+            }
+
+            get info() {
+                return `${this.name}, порода: ${this.#breed}`;
+            }
+        }
+
+        const baron = new DogClass("Барон", "лабрадор");
+        baron.speak();
+        console.log("baron.info:", baron.info);
+        console.log("baron instanceof DogClass:", baron instanceof DogClass);
+        console.log("baron instanceof AnimalClass:", baron instanceof AnimalClass);
+
+        // ========== Частина 3: прототипний ланцюжок ==========
+
+        console.log("\n=== Прототипний ланцюжок ===");
+        let proto = baron;
+        while (proto) {
+            console.log(proto.constructor?.name || "(Object.prototype)");
+            proto = Object.getPrototypeOf(proto);
+        }
+    </script>
+</body>
+</html>

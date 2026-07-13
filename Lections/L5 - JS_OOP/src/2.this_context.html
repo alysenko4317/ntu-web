@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Контекст this</title>
+</head>
+<body>
+    <h1>Контекст <code>this</code></h1>
+    <p>Результати — у консолі (F12).</p>
+
+    <script>
+        const user = {
+            name: "Олена",
+            greet() {
+                console.log("this.name =", this.name);
+            }
+        };
+
+        console.log("--- 1. Виклик як метод ---");
+        user.greet(); // "Олена"
+
+        console.log("--- 2. Втрата контексту ---");
+        const fn = user.greet;
+        fn(); // undefined (this === window у нестрогому режимі)
+
+        console.log("--- 3. Відновлення через bind ---");
+        const bound = user.greet.bind(user);
+        bound(); // "Олена"
+
+        console.log("--- 4. call / apply ---");
+        user.greet.call({ name: "Андрій" });  // "Андрій"
+        user.greet.apply({ name: "Марія" });  // "Марія"
+
+        console.log("--- 5. Стрілочна функція ---");
+        const team = {
+            name: "Команда",
+            members: ["Олена", "Андрій"],
+            showMembers() {
+                this.members.forEach(member => {
+                    // стрілочна функція бере this з showMembers
+                    console.log(`${member} у ${this.name}`);
+                });
+            }
+        };
+        team.showMembers();
+    </script>
+</body>
+</html>

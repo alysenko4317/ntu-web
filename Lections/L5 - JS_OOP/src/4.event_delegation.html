@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Делегування подій</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        ul { list-style: none; padding: 0; max-width: 400px; }
+        li { padding: 10px; margin: 4px 0; background: #ecf0f1; border-radius: 4px; cursor: pointer; }
+        li:hover { background: #d5dbdb; }
+        li.selected { background: #3498db; color: #fff; }
+        button { margin-top: 1rem; padding: 8px 16px; }
+        #info { margin-top: 1rem; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Делегування подій</h1>
+
+    <ul id="list">
+        <li data-id="1">Елемент 1</li>
+        <li data-id="2">Елемент 2</li>
+        <li data-id="3">Елемент 3</li>
+    </ul>
+
+    <button id="addBtn">Додати елемент</button>
+    <div id="info">Клікніть на елемент списку.</div>
+
+    <script>
+        const list = document.getElementById("list");
+        const info = document.getElementById("info");
+        let counter = list.children.length;
+
+        list.addEventListener("click", function (event) {
+            const li = event.target.closest("li");
+            if (!li || !list.contains(li)) return;
+
+            document.querySelectorAll("#list li.selected").forEach(el => el.classList.remove("selected"));
+            li.classList.add("selected");
+
+            info.textContent =
+                `Клік: "${li.textContent}" (data-id=${li.dataset.id}), ` +
+                `target: ${event.target.tagName}, currentTarget: ${event.currentTarget.tagName}`;
+        });
+
+        document.getElementById("addBtn").addEventListener("click", function () {
+            counter++;
+            const li = document.createElement("li");
+            li.dataset.id = counter;
+            li.textContent = `Елемент ${counter} (динамічний)`;
+            list.appendChild(li);
+        });
+    </script>
+</body>
+</html>
