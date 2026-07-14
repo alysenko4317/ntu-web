@@ -3,3 +3,11 @@
 present
 *.pyc
 
+# Node / frontend (Vite, React тощо) — залежності не в репозиторії
+node_modules/
+dist/
+dist-ssr/
+*.local
+.DS_Store
+Thumbs.db
+

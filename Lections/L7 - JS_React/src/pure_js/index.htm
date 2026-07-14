@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <!-- Вказуємо кодування документа -->
+    <meta charset="UTF-8" />
+
+    <!-- Налаштовуємо viewport для адаптивності -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Заголовок сторінки -->
+    <title>Лічильник шаурми на HTML і JavaScript</title>
+</head>
+<body>
+    <!-- Кореневий елемент -->
+    <div class="root">
+        <!-- Елемент для відображення значення лічильника -->
+        <h1 id="counter-value"></h1>
+
+        <!-- Кнопка для збільшення значення -->
+        <button id="increment-btn">+1</button>
+    </div>
+
+    <script>
+        // Отримуємо елемент для відображення значення лічильника
+        const counterValueElement =
+            document.getElementById("counter-value");
+
+        // Отримуємо кнопку збільшення значення
+        const incrementBtn =
+            document.getElementById("increment-btn");
+
+        // Ініціалізуємо початкове значення лічильника
+        let counterValue = 0;
+
+        // Функція збільшення значення лічильника
+        function increment() {
+            counterValue += 1;
+            counterValueElement.innerText = `Шаурми з’їдено: ${counterValue}`;
+        }
+
+        // Встановлюємо значення за замовчуванням для заголовка
+        counterValueElement.innerText = `Шаурми з’їдено: ${counterValue}`;
+
+        // Додаємо обробник події натискання на кнопку
+        incrementBtn.addEventListener("click", increment);
+    </script>
+</body>
+</html>

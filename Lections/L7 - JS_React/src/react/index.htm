@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <!-- Мета-теги для налаштування кодування і viewport -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Лічильник шаурми на React</title>
+</head>
+<body>
+    <!-- Кореневий елемент для React-застосунку -->
+    <div id="root"></div>
+
+    <!-- Підключення бібліотек React -->
+    <script
+        src="https://unpkg.com/react@17/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/@babel/standalone@7.13.6/babel.min.js"
+    ></script>
+
+    <script type="text/babel">
+        // Компонент лічильника
+        function ShawarmaCounter() {
+            // Створюємо стан для значення лічильника
+            const [counterValue, setCounterValue] = React.useState(0);
+
+            // Функція збільшення значення лічильника
+            function increment() {
+                setCounterValue(counterValue + 1);
+            }
+
+            return (
+                <div className="root">
+                    {/* Елемент для відображення значення лічильника */}
+                    <h1>Шаурми з’їдено: {counterValue}</h1>
+
+                    {/* Кнопка для збільшення значення */}
+                    <button onClick={increment}>+1</button>
+                </div>
+            );
+        }
+
+        // Відображаємо React-компонент у кореневому елементі
+        ReactDOM.render(<ShawarmaCounter />, document.getElementById("root"));
+    </script>
+</body>
+</html>
